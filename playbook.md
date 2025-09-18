@@ -1,13 +1,13 @@
 # 📖 Construye dApps en Starknet Rápidamente con Scaffold-Stark
 
 ---
-title: Construye dApps en Starknet Rápidamente con Scaffold-Stark
-instructor: Damian Piñones
-prerequisites:
+Construye dApps en Starknet Rápidamente con Scaffold-Stark
+Damian Piñones
+Pre Requisitos:
   - Conocimientos básicos de Cairo y desarrollo de contratos inteligentes en Starknet
   - Familiaridad con JavaScript/TypeScript y React/Next.js
   - Entendimiento de fundamentos de Starknet (ej. cuentas, transacciones)
-tools_required:
+Herramientas requridas:
   - Node.js (v18 LTS o superior)
   - Yarn (gestor de paquetes)
   - Scarb (v2.12.0) para compilación de Cairo
@@ -26,7 +26,6 @@ Al final de esta sesión, los participantes podrán:
 
 **Entregables**:
 - Una dApp funcional con un contrato inteligente "Greeting" desplegado, frontend que muestra y actualiza el estado, y una demo de transacción multi-escritura.
-- Configuración local de DevNet con historial de transacciones visible en el explorador de bloques integrado.
 
 ## 💡 Introducción
 
@@ -99,8 +98,6 @@ Scaffold-Stark agiliza la estructura monorepo para dApps en Starknet: contratos 
 
 ### 💡 Mejores Prácticas
 - Usa ASDF o Dev Containers para bloquear versiones de herramientas, evitando problemas "funciona en mi máquina".
-- Siempre fork de Mainnet/Sepolia para probar contratos externos: `yarn chain --fork-network https://starknet-mainnet.public.blastapi.io/rpc/v0_9`.
-- Commitea temprano: Scaffold incluye Git; push a GitHub para colaboración.
 
 ## ⚙️ Sección 2: Integración de Frontend y Escrituras Multi-Transacción
 
@@ -120,7 +117,7 @@ Las interacciones de frontend aprovechan hooks de starknet-react sobre starknet.
    ```ts
    targetNetworks: [chains.sepolia],
    ```
-   - Agrega a `packages/snfoundry/.env`: `PRIVATE_KEY=your_private_key` (genera vía Argent).  
+   - Agrega a `packages/snfoundry/.env`: `PRIVATE_KEY=your_private_key`.  
    - En `packages/nextjs/.env`: `NEXT_PUBLIC_SEPOLIA_PROVIDER_URL=https://starknet-sepolia.public.blastapi.io/rpc/v0_9`.
 
 2. Fondos en wallet: Obtén STRK del faucet, nota dirección de cuenta.
@@ -132,7 +129,6 @@ Las interacciones de frontend aprovechan hooks de starknet-react sobre starknet.
      contractName: 'YourContract',
      functionName: 'get_greeting',
    });
-   // Render: <span className="text-xl">{Uint8Array.from(greeting?.result ?? []).toString()}</span>
    ```
 
 4. Agrega botón de escritura simple:  
@@ -174,18 +170,6 @@ Las interacciones de frontend aprovechan hooks de starknet-react sobre starknet.
 - Prueba en forks: Simula problemas de liquidez Mainnet sin fondos reales.
 - Claves seguras: Usa `.env` con `.gitignore`; para prod, integra wallets hardware.
 
-## ⛩️ Reflexión Final
-
-### Síntesis de Aprendizaje
-- ¿Cómo cambiaron la recarga automática y los hooks type-safe tu flujo de desarrollo comparado con setups manuales de Starknet?
-- ¿Qué desafío (ej. bundling multi-write) te sorprendió más, y cómo impacta en la construcción de dApps amigables para el usuario?
-- Reflexiona sobre un proyecto Starknet real (ej. idea de tu hackathon)—¿cómo aceleraría Scaffold-Stark?
-
-### Pasos Siguientes Recomendados
-- [ ] Forkea el repo de muestra y agrega una nueva característica de contrato (ej. emisión de eventos con hook `useEvents`).
-- [ ] Explora extensiones: Ejecuta `npx create-stark@latest --extension indexer` para querying pre-integrado.
-- [ ] Construye un proyecto personal: Integra Scaffold-Stark con un primitivo DeFi como UI de swap simple.
-
 ### Conexión con Otras Sesiones
 Este playbook se basa en fundamentos de Cairo (taller previo) agregando velocidad full-stack dApp, preparando para temas avanzados como fintech en Starknet (siguiente sesión). Forma el núcleo de una progresión bootcamp Starknet: contratos → clientes → apps escalables.
 
@@ -203,10 +187,4 @@ Este playbook se basa en fundamentos de Cairo (taller previo) agregando velocida
 
 ### Herramientas Complementarias
 - ASDF para Gestión de Herramientas: https://asdf-vm.com/
-- Setup de Dev Containers: https://code.visualstudio.com/docs/devcontainers/containers
 - Faucets: https://starknet-faucet.vercel.app/
-
-### Comunidades y Soporte
-- Discord de Scaffold-Stark: Únete vía README de GitHub
-- Foro Starknet: https://community.starknet.io/
-- Telegram de Dojo Coding: Para Q&A específico de hackathon
