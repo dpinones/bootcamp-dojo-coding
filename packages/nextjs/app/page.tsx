@@ -1,14 +1,70 @@
+// "use client"
+
 import Link from "next/link";
 import Image from "next/image";
 import { ConnectedAddress } from "~~/components/ConnectedAddress";
+// import { useScaffoldReadContract } from "~~/hooks/scaffold-stark/useScaffoldReadContract";
+// import { useScaffoldWriteContract } from "~~/hooks/scaffold-stark/useScaffoldWriteContract";
+// import { CairoOption, CairoOptionVariant } from "starknet";
+// import { useScaffoldMultiWriteContract } from "~~/hooks/scaffold-stark/useScaffoldMultiWriteContract";
+// import { useDeployedContractInfo } from "~~/hooks/scaffold-stark";
 
 const Home = () => {
+
+  // const YourContract = useDeployedContractInfo("YourContract");
+
+  // const { data: greeting, isLoading} = useScaffoldReadContract({
+  //   contractName: "YourContract",
+  //   functionName: "greeting"
+  // });
+
+  // const {sendAsync: setGreeting } = useScaffoldWriteContract({
+  //   contractName: "YourContract",
+  //   functionName: "set_greeting",
+  //   args: [
+  //     "Que onda los pibes?", new CairoOption(CairoOptionVariant.None, 0n)
+  //   ]
+  // });
+
+  // const { sendAsync: setGreetingwithPremium } = useScaffoldMultiWriteContract({
+  //   calls: [
+  //     {
+  //       contractName: "Strk",
+  //       functionName: "approve",
+  //       args: [
+  //         YourContract.data?.address, 2000000000000000000n
+  //       ]
+  //     },
+  //     {
+  //       contractName: "YourContract",
+  //       functionName: "set_greeting",
+  //       args: [
+  //         "Los pibes premium?", new CairoOption(CairoOptionVariant.Some, 2000000000000000000n)
+  //       ]
+  //     }
+  //   ]
+  // });
+
   return (
     <div className="flex items-center flex-col grow pt-10">
       <div className="px-5">
         <h1 className="text-center">
           <span className="block text-2xl mb-2">Welcome to</span>
           <span className="block text-4xl font-bold">Scaffold-Stark 2</span>
+
+          {/* <span className="text-2xl">{greeting?. toString()}</ span>
+          
+          <button className="btn btn-primary" onClick={() => setGreeting()}>
+          Set Greeting
+          </ button>
+          
+          <button
+            className="btn-primary"
+            onClick={() => setGreetingwithPremium()}
+          >
+            Set Greeting With Premium 
+          </ button> */}
+
         </h1>
         <ConnectedAddress />
         <p className="text-center text-lg">
